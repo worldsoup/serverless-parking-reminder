@@ -1,0 +1,25 @@
+service: parking-messenger
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+functions:
+  secondWed:
+    handler: messenger.hello
+    events:
+    #triggers at 17:00 UTC on the 4th day of the week (Tuesday) and the second occurence each month
+      - schedule: cron(00 17 ? * 4#2 *)
+  fourthWed:
+    handler: messenger.hello
+    events:
+      - schedule: cron(00 17 ? * 4#4 *)
+  secondFri:
+    handler: messenger.hello
+    events:
+      - schedule: cron(00 17 ? * 6#2 *)
+  fourthFri:
+    handler: messenger.hello
+    events:
+      - schedule: cron(00 17 ? * 4#4 *)
+

@@ -1,0 +1,8 @@
+{
+  "name": "",
+  "description": "",
+  "version": "0.0.0",
+  "dependencies": {
+    "twilio": "^2.11.0"
+  }
+}
